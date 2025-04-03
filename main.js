@@ -5,10 +5,7 @@
 
 // Exercice 1.1 : Transforme la concaténation en interpolation de chaîne de caractères avec les backticks `
 function afficheAddresse(address) {
-  return (
-    `Votre adresse est : ${address.street}, ${address.city}, ${address.country}.`
-    
-  );
+  return `Votre adresse est : ${address.street}, ${address.city}, ${address.country}.`;
 }
 
 console.log("Exercice 1.1");
@@ -42,7 +39,7 @@ console.log("Exercice 2.1");
 console.log(red, green, blue, yellow);
 
 // Exercice 2.2 : La même chose, mais en ignorant ici "Red" et "Yellow"
-const [ green2, blue2] = colors;
+const [, green2, blue2] = colors;
 
 console.log("Exercice 2.2");
 console.log(green2, blue2);
@@ -72,11 +69,7 @@ const roman = {
 };
 
 // Exercices 2.3 : Décompose l'objet pour récupérer le titre, l'éditeur et le tome dans des constantes
-for (const {
-  title,
-  editor,
-  tome,
-} of [roman]) {
+for (const { title, editor, tome } of [roman]) {
   console.log("Exercice 2.3");
   console.log(title, editor, tome);
 }
@@ -95,13 +88,12 @@ for (const {
   ],
 } of [roman]) {
   console.log("Exercice 2.4");
-console.log(
-  mainCharacterName,
-  secondCharacterName,
-  thirdCharacterJapaneseVoice
-);
+  console.log(
+    mainCharacterName,
+    secondCharacterName,
+    thirdCharacterJapaneseVoice
+  );
 }
-
 
 // ------
 
@@ -110,7 +102,6 @@ let lastname = "Doe";
 
 // Exercice 2.5 : Faites l'inversion du prénom et nom avec la décomposition
 // plutôt qu'avoir une variable temporaire
- 
 
 let [firstName, lastName] = [lastName, firstName];
 console.log("Exercice 2.5");
@@ -125,8 +116,8 @@ const person = {
 };
 
 // Exercice 2.6 : Fais une décomposition du paramètre pour extraire directement le prénom et le nom
-function hello(person) {
-  console.log(`Bonjour ${person.firstname} ${person.lastname} !`);
+function hello({ firstname, lastname }) {
+  console.log(`Bonjour ${firstname} ${lastname} !`);
 }
 
 console.log("Exercice 2.6");
@@ -138,7 +129,7 @@ hello(person);
  */
 
 // Exercice 3.1 : Décompose le tableau colors pour ne garder dans le reste que les couleurs bleue et jaune
-const restOfColors = [];
+const restOfColors = [...restOfColors.slice];
 
 restOfColors.push(colors[2]);
 restOfColors.push(colors[3]);
